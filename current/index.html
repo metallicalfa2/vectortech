@@ -1,0 +1,49 @@
+<html>
+   <head>
+      <title>Shubham Rathi</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <script type="text/javascript" src="materialize-3/js/jquery-2.1.1.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="materialize-3/css/materialize.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="assets/font-awesome/css/font-awesome.min.css">
+   </head>
+   <body ng-app="">
+
+
+      <div class="navbar-fixed">
+         <div class="row" ng-include="'partials/header.html'"></div>
+      </div>
+
+      <div class="section spotlight">
+         <div class="row">
+            <div ng-include="'partials/spotlight.html'"></div>
+         </div>
+      </div>
+
+      <!-- <div class="section">
+         <!-          <h3 class="header center">Products</h3> 
+         <div class="row">
+            <div class="col l10 offset-l1" >
+               <div ng-include="'partials/cards.html'"></div>
+               <div ng-include="'partials/cards.html'"></div>
+               <div ng-include="'partials/cards.html'"></div>
+
+            </div>
+         </div>
+      </div>
+      <footer class="page-footer grey darken-2" ng-include="'partials/footer.html'"></footer> -->
+   </body>
+   <script type="text/javascript" src="materialize-3/js/materialize.js"></script>
+   <script type="text/javascript" src="assets/angular/angular.min.js"></script>
+   <script type="text/javascript">
+      $( document ).ready(function(){
+         $(".button-collapse").sideNav();
+         //$(".dropdown-button").dropdown({hover:false});
+        // $(".slider").slider({indicators:false,height:600});
+      
+      })
+
+      angular.module()
+   </script>
+</html>

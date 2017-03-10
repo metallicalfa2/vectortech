@@ -1,0 +1,48 @@
+body{
+
+	background-image: url("1.jpg"); ;
+	font-family: lumos;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.css-typing
+{
+    width: 30em;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(100, end);
+    animation: type 5s steps(100, end);
+    font-style: bold;
+    font-family: new;
+    src: url("lumos.ttf");
+    font-size: 60px;
+    color: rgb(250,154,89);
+    display: none 5s;
+    
+   
+}
+
+
+div{
+    position: absolute;
+    top: 55%;
+    left: 35%;
+    width: 40%;
+    height: 30%;
+    font-style: bold;
+    font-family: new;
+    src: url("lumos.ttf");
+    font-size: 60px;
+    color: rgb(250,154,89);
+
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+@-webkit-keyframes type{
+    from { width: 0; }
+}
+

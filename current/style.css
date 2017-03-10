@@ -1,0 +1,94 @@
+body,html{
+	height: 100%;
+	width: 100%;
+}
+
+.box-shadow-none{
+	box-shadow: none;
+}
+.spotlight-big .card-image{
+	max-height: 80% !important
+}
+.spotlight-big .card-content{
+	background-color: white;
+	color: black;
+	top:-5em !important;
+	position: relative;
+	height: auto;
+}
+.card-content p{
+	color: black !important;
+}
+p{
+	font-size: 20px;
+}
+.white{
+	box-shadow: none;
+}
+.logo{
+ 	font-weight: 300;
+}
+.navbar-fixed{
+	padding-top: 1em;
+}
+#nav-mobile a {
+	font-weight: 200;
+	color: black;
+	font-size: 28px;
+}
+.spotlight .row{
+	margin:0;
+}
+.spotlight{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+}
+
+.spotlight-big {
+	height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("assets/Group.svg");
+    position: relative;
+}
+.spotlight-big h1{
+	text-align: center;
+	font-size: 117px;
+	font-weight: 300;
+
+}
+
+svg{
+	/* Combined Shape: */
+background-image: linear-gradient(-237deg, #7DFA5F 30%, #EAFF00 80%);
+/* FREELANCE: */
+font-family: SourceSansPro-Light;
+font-size: 26px;
+color: #000000;
+letter-spacing: 1.02px;
+/* DEVELOPER: */
+font-family: Roboto-Light;
+font-size: 117px;
+color: #000000;
+letter-spacing: 8.43px;
+/* Web & iOS: */
+font-family: SourceSansPro-Light;
+font-size: 49px;
+color: #6D6D6D;
+letter-spacing: 1.83px;
+}
+
+@media screen and (max-width: 700px){
+	.spotlight-big{
+		background-size: 100%;
+	}
+	.logo{
+		font-size: 25px !important;
+	}
+	.navbar-fixed{
+		padding-top: 0;
+	}
+
+}

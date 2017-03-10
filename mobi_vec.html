@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+	<link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Glegoo' rel='stylesheet' type='text/css'>
+	<title>VectorTech</title>
+	<style>
+	body,html{
+		margin: 0;
+		height: 100%;
+		width: 100%;
+	}
+	#header{
+		position: relative;
+		height: 10%;
+		width: 100%;
+		background-color: #000000;		
+	}
+	
+	#container{
+		width: 100%;
+		height: 85%;
+		position: relative;
+		background-image: url('./assets/back.jpg');
+	}
+	#logo{
+		position: absolute;
+		height:65%;
+		left: 5%;
+		top:15%;
+	}
+
+	#menu{
+		position: absolute;
+		height: 30%;
+		right: 5%;
+		top:35%;
+	}
+	#footer{
+		height:5%;
+		width: 100%;
+		background-color: #000;
+		position: relative;
+	}
+	#fb{
+		top:10%;
+		width: 6%;
+		right:12%;
+		position: absolute;
+	}
+	#tw{
+		top:10%;
+		width: 6%;
+		right:4%;
+		position: absolute;
+	}
+	#footer span{
+		color: #ffffff;
+		left:2%;
+		bottom: 40%;
+		position: absolute;
+		font-size: 15px;
+		font-family: 'Glegoo', serif;
+	}
+	#title{
+    	float: left;
+    	margin-left:12%; 
+    	margin-top: 2%;
+    	width:80%;
+    	border-bottom: 5px solid #ffffff;
+    	position: relative;
+    	z-index: 100;
+    }
+    #text{
+    	float: left;
+    	margin-left:12%; 
+    	margin-top: 0%;
+    	width:80%;
+    	border-bottom: 5px solid #ffffff;
+    	height: 80%;
+    	overflow: scroll;
+    	position: relative;
+    	margin-top: 0.5%;
+    	margin-bottom: 1.5%;
+    	z-index: 100;
+    }
+
+    h1{
+    	color: #ffffff;
+    	font-size: 3em;
+		font-family: 'Orbitron', sans-serif;
+		font-weight: normal;
+		margin-bottom: 1.5%;
+    }
+    p{
+    	color: #ffffff;
+    	font-size: 18px;
+		font-family: 'Glegoo', serif;
+		font-weight: normal;
+		margin-left: 10%;
+		margin-right: 3%;
+		margin-top: 1.5%;
+    	margin-bottom: 1.5%;
+    }
+    #dropdown_menu{
+    	overflow: hidden;
+    	position: absolute;
+    	top:10%;
+    	width: 90%;
+    	right: 5%;
+    	background-color: #000;
+    	z-index: 1000;
+    	height: 0%;
+    	transition: height 0.3s linear 0s;
+    }
+
+    #dropdown_menu_hidden{
+    	overflow: hidden;
+    	position: absolute;
+    	top:10%;
+    	width: 90%;
+    	right: 5%;
+    	background-color: #000;
+    	z-index:-1000;
+    	height: 40%;
+    }
+	</style>
+</head>
+<body>
+	
+ 	<div id="header">
+ 		<img id="logo" src="./assets/vectorTech.svg"  />
+ 		<a href="#" onclick="dropdown()"><img id="menu" src="./assets/menu.svg" /></a>
+ 	</div>
+ 	<div id="container">
+	  <div class ="title">
+			<div id="inner">
+				<h1>Home</h1>
+			</div>
+		</div>
+
+		<div id="text">
+
+			<div id="Home" >
+				<span id="quote"></span>
+				<span id="cursor">|</span>
+				<br><br>
+				<span id="ps" style="float:right;"></span></p>
+			</div>
+
+			<div id="about">
+				<p>
+					Vector Tech is a BITSian Start-Up where we Believe in creating flawless user experience with cutting edge technology.</br>
+					We at Vector Tech thrieve for perfection and create online reflection of your business throuh our work
+				</p>
+			</div>
+
+			<div id="Services">
+				<div class="skills"><p>Web Designing</p>
+					<ul>
+						<li>Web Design</li>
+						<li>Logo Design</li>
+						<li>Graphics Design</li>
+					</ul>
+
+				</div>
+				
+				<div class="skills"><p>Web Development</p>
+					<ul>
+						<li>PHP development</li>
+						<li>Database suppport</li>
+						<li>Node.js framework</li>
+					</ul>
+				</div>
+			</div>
+
+			<div id="Contact">
+				<div class="form">
+					<FORM action="mail.php" method="POST">
+<!-- 						<h2>Name:</h2>
+ -->						<input class="name" type="text" placeholder="Full Name" name="name"> 
+						<br><br><br><br>
+<!-- 						<h2>Email:</h2>
+ -->						<input class="name" type="email" placeholder="E-mail Address" name="email">
+						<br><br><br><br>
+<!-- 						<h2>Messsage:</h2>
+ -->						<input class="name" id="message" type="text" placeholder="Message" name="message">
+						<br><br><br><br><br><br><br>
+						<input class="name" id="submit" type="submit" placeholder="Submit">	
+					</FORM>	
+				</div>
+			</div>
+
+			<!-- <div id="Work">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div> -->
+
+			
+
+			
+		</div>
+	   
+ 	</div>
+ 	<div id="footer">
+ 		<span> site design / logo © 2015 Vector Technology solution.</span>
+			<svg id="fb" xmlns="http://www.w3.org/2000/svg" xml:  version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+			viewBox="0 0 4520 4530"
+			 xmlns:xlink="http://www.w3.org/1999/xlink">
+			 <defs>
+			  <style type="text/css">
+			   <![CDATA[
+			    .fil0 {fill:#EE0000}
+			   ]]>
+			  </style>
+			 </defs>
+			 <g id="Layer_x0020_1">
+			  <path class="fil0" d="M-1 4522l2426 8 0 -1744 -614 0 -4 -705 618 0c0,-542 -95,-1334 745,-1443 193,-25 500,-6 699,14 24,80 9,520 9,638 -814,0 -733,-13 -733,791l701 1 -89 698 -612 6 0 1735 1376 0 -1 -4520 -4521 -1 0 4522z"/>
+			 </g>
+			</svg>
+		<svg id="tw" xmlns="http://www.w3.org/2000/svg" xml:space=  version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+		viewBox="0 0 4520 4530"
+		 xmlns:xlink="http://www.w3.org/1999/xlink">
+		 <defs>
+		  <style type="text/css">
+		   <![CDATA[
+		    .fil0 {fill:#E0000}
+		   ]]>
+		  </style>
+		 </defs>
+		 <g id="Layer_x0020_1">
+		  <path class="fil0" d="M3314 1511c109,-11 208,-64 280,-71 -40,51 -75,108 -119,155 -46,49 -121,85 -149,141 0,681 -344,1153 -733,1392 -234,144 -504,229 -830,228 -245,0 -703,-107 -827,-245 176,-2 285,4 448,-48 107,-34 280,-109 331,-179 -131,-22 -231,-53 -311,-123 -57,-50 -163,-157 -178,-264 89,10 133,16 217,-10 -241,-101 -402,-222 -415,-540 86,21 128,60 233,56 -177,-147 -331,-427 -152,-725 51,93 319,300 450,376 183,106 428,180 675,194 -67,-658 578,-815 887,-551 72,62 75,54 190,14 72,-25 139,-67 207,-87 -39,153 -121,204 -204,287zm-3314 3019l4520 0 0 -4530 -4520 0 0 4530z"/>
+		 </g>
+		</svg>
+ 	</div>
+ 	<div id="dropdown_menu">
+ 		<nav class="dropdown_list" id="dropdown_list">
+			<a href="#dropdown_list" id="work" onclick="transform_torus_work()">About</a>
+			</br>
+			<a href="#dropdown_list" id="services" onclick="transform_torus_services()">Services</a>
+			</br>
+			<a href="#dropdown_list" id="about" onclick="transform_torus_about()">Contact</a>
+  		</nav>
+	</div>
+	<div id="dropdown_menu_hidden">
+ 		<nav  id="dropdown_list_hidden">
+			<a>About</a>
+			</br>
+			<a>Services</a>
+			</br>
+			<a>Contact</a>
+  		</nav>
+	</div>
+	<style type="text/css">
+	 nav{
+	   		position: relative;
+	   		text-align: center;
+	    }
+
+	   nav a {
+		display: inline-block;
+		margin: 20px 10px;
+		outline: none;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		border-bottom: 3px solid #ff0000;
+		letter-spacing: 1px;
+		font-weight: 400;
+		text-shadow: 0 0 1px rgba(255,255,255,0.3);
+		font-size: 2em;
+	    font-family: 'Michroma', sans-serif;
+	    padding-bottom: 2%;
+	    width: 70%;
+		}
+
+		nav a:hover,
+		nav a:focus {
+			outline: none;
+			border-bottom: 3px solid #fff;
+		}
+
+		.dropdown_list a::before,
+		.dropdown_list a::after {
+			display: inline-block;
+			opacity: 0;
+			-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+			-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+			transition: transform 0.3s, opacity 0.2s;
+		}
+
+		.dropdown_list a::before {
+			margin-right: 10px;
+			content: '[';
+			-webkit-transform: translateX(20px);
+			-moz-transform: translateX(20px);
+			transform: translateX(20px);
+		}
+
+		.dropdown_list a::after {
+			margin-left: 10px;
+			content: ']';
+			-webkit-transform: translateX(-20px);
+			-moz-transform: translateX(-20px);
+			transform: translateX(-20px);
+		}
+
+		.dropdown_list a:hover::before,
+		.dropdown_list a:hover::after,
+		.dropdown_list a:focus::before,
+		.dropdown_list a:focus::after {
+			opacity: 1;
+			-webkit-transform: translateX(0px);
+			-moz-transform: translateX(0px);
+			transform: translateX(0px);
+		}
+
+		.dropdown_list :hover {
+			color: #ff0000;
+		}
+
+		.red {
+			color: red;
+		}
+
+
+		::-webkit-scrollbar {
+		    width: 7px;
+		}
+		 
+
+		::-webkit-scrollbar-track {
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		}
+		 
+		 Handle 
+		::-webkit-scrollbar-thumb {
+		    -webkit-border-radius: 0px;
+		    border-radius: 0px;
+		    background: rgba(255,0,0,0.8); 
+		}
+
+		::-webkit-scrollbar-corner{
+			width: 0%;
+			height: 0%
+		}
+	</style>		
+	<script type="text/javascript">
+		var menu=document.getElementById('dropdown_menu');
+		var icon=document.getElementById('menu');
+	 	var maxH=(document.getElementById('dropdown_list_hidden').clientHeight)+"px";
+	 	window.addEventListener('resize',maxH=(document.getElementById('dropdown_list_hidden').clientHeight+50)+"px");
+		function dropdown(){
+			if(menu.style.height == maxH){
+		        menu.style.height = "0px";
+		        rotor(0);
+		        
+		    } else {
+		        menu.style.height = maxH;
+		        rotor(90);
+		    }
+		}
+		function rotor(angle){
+				if(navigator.userAgent.match("Chrome")){
+					icon.style.WebkitTransform = "rotate("+angle+"deg)";
+				} else if(navigator.userAgent.match("Firefox")){
+					icon.style.MozTransform = "rotate("+angle+"deg)";
+				} else if(navigator.userAgent.match("MSIE")){
+					icon.style.msTransform = "rotate("+angle+"deg)";
+				} else if(navigator.userAgent.match("Opera")){
+					icon.style.OTransform = "rotate("+angle+"deg)";
+				} else {
+					icon.style.transform = "rotate("+angle+"deg)";
+				}
+		}
+	</script>
+		
+</body>
+</html>

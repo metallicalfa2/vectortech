@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="685px" height="570px" viewBox="0 0 685 570" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <style>
+
+    </style>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="73.8360796%" y1="50%" x2="31.2170791%" y2="77.0997625%" id="linearGradient-1">
+            <stop stop-color="#7DFA5F" offset="0%"></stop>
+            <stop stop-color="#EAFF00" offset="100%"></stop>
+        </linearGradient>
+        <style>
+            <![CDATA[
+                @font-face {
+                    font-family: Roboto;
+                    src: url('http://nimbupani.com/demo/svgfonts/delicious-roman.otf');
+                }
+               ]]>
+        </style>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Landscape-Copy-3" transform="translate(-296.000000, -140.000000)">
+            <g id="Group" transform="translate(286.000000, 140.000000)">
+                <path d="M425.421081,123.5605 L354.085866,0.00505179214 L211.414105,247.118254 L425.421081,123.5605 Z M568.533092,371.436233 L683.171732,569.994948 L568.533092,569.994948 L568.533092,371.436233 Z M470.103655,569.994948 L25,569.994948 L136.276952,377.258813 L470.103655,569.994948 Z" id="Combined-Shape" fill="url(#linearGradient-1)"></path>
+                <g id="Group-Copy" transform="translate(0.000000, 167.500000)" font-weight="300">
+                    <text id="FREELANCE" font-family="SourceSansPro-Light, Source Sans Pro" font-size="26" letter-spacing="1.02408183" fill="#000000">
+                        <tspan x="287.212632" y="228.950291">FREELANCE</tspan>
+                    </text>
+                    <text id="DEVELOPER" font-family="Roboto-Light, Roboto" font-size="117" letter-spacing="8.43000031" fill="#000000">
+                        <tspan x="0.142147064" y="169.950291">DEVELOPER</tspan>
+                    </text>
+                    <text id="Web-&amp;-iOS" font-family="SourceSansPro-Light, Source Sans Pro" font-size="49" letter-spacing="1.83000004" fill="#6D6D6D">
+                        <tspan x="462.637732" y="48.9502909">Web &amp; iO</tspan>
+                        <tspan x="656.176732" y="48.9502909">S</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

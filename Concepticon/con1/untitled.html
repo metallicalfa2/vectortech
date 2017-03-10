@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="/img/favicon.ico" rel="shortcut icon"/>
+        <meta property="og:url" content="https://www.cs50.net/" />
+        <meta property="og:title" content="CS50 2015" />
+        <meta property="og:description" content="This is CS50." />
+        <meta property="og:image" content="https://www.cs50.net/img/icons/fb.png" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                                    <link rel="stylesheet" type="text/css" href="/css/min.css?time=1425325781">`
+                                        <script src="/js/min.js?time=1425325781"></script>
+        		<title>This is CS50.</title>
+        <style>
+
+            .fade {
+               transition: none !important; 
+               -moz-transition: none !important; 
+               -webkit-transition: none !important;
+            }
+        </style>
+    </head>
+    <body>
+                <div id="left">
+           	<div class="arrow arrow-left"></div>
+        	<div id="left-inner">
+        		<div id="header">
+        			<h1 id="title">CS50</h1>
+                                    			</div>
+                <div id="instructor" class="nav_text">
+                    <p><a href="http://cs.harvard.edu/malan">David J. Malan '99</a></p>
+                    <p><a href="mailto:malan@harvard.edu">malan@harvard.edu</a></p>
+                </div>
+    			<ul id="left-menu">
+                        				<li class="hover-link" data-route="faqs">FAQs</li>
+                    <li><a href="http://launchcode.org/cs50">LaunchCode</a></li>
+    				<li class="hover-link" data-route="q" id="q-evaluations_link">Q Evaluations</li>
+                                        <!--
+					<li class="hover-link" id="scores_link" data-route="scores">Scores</li>
+                                        <li><a target="_blank" href="https://newapps.cs50.net/gradebook">Scores</a></li>
+                                        -->
+                                        <li><a href="http://store.cs50.net/">Store</a></li>
+                    <!-- <li class="whitespace"></li>
+                        <div id="apps-menu-title">
+                            CS50 Apps
+                        </div>
+                        <div id="apps-menu-listing">
+                            <ul>
+                                <li><a href="https://courses.cs50.net">CS50 Courses</a></li>
+                            </ul>
+                        </div> -->
+                    <li class="whitespace"></li>
+                    <li><a href="/discuss">Discuss</a></li>
+                    <li><a href="/gradebook">Gradebook</a></li>
+                    <li><a href="http://cdn.cs50.net/2015/spring/project/project.html">Final Project</a></li>
+					<li class="hover-link" id="lectures_link" data-route="lectures">Lectures</li>
+                                        <!--
+                                <li><a target="_blank" href="http://www.youtube.com/watch?v=FRYjmE7tmZU&list=PLhQjrBD2T380I7DNIDYg3CcPmS_9UVokJ">Live</a></li>
+                    -->
+                                <li><a href="https://live.cs50.net/">Live</a></li>
+    				<li class="hover-link" data-route="music" id="music">Music</li>
+                                <!--
+    				<li class="hover-link" data-route="hours">Office Hours</li>
+                                -->
+                                <li><a target="_blank" href="https://www.google.com/calendar/embed?showTitle=1&showNav=0&showDate=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=600&wkst=1&bgcolor=%23FFFFFF&src=f1vd9k17apssc12tesn9vhoorg%40group.calendar.google.com&color=%238D6F47&ctz=America%2FNew_York&title=CS50%20Office%20Hours%2C%20Spring%202015">Office Hours</a></li>
+    				<li class="hover-link" data-route="psets">Problem Sets</li>
+    				<li id="quizzes_link" data-route="quizzes">Quizzes</li>
+    				<li><a href="https://reference.cs50.net/">Reference</a></li>
+    				<li class="hover-link" data-route="resources" id="resources_link">Resources</li>
+    				<li data-route="sections" id="sections_link">Sections</li>
+                                <li><a href="https://manual.cs50.net/Seminars">Seminars</a></li>
+    				<li class="hover-link" data-route="shorts" id="shorts_link">Shorts</li>
+    				<li class="hover-link" data-route="software" id="software_link">Software</li>
+    				<li class="hover-link" data-route="staff">Staff</li>
+    				<li><a href="https://study.cs50.net">Study</a></li>
+                    <li><a target="_blank" href="/syllabus">Syllabus</a></li>
+                    <!--<li class="hover-link" data-route="syllabus">Syllabus</li>-->
+                    <li class="whitespace"></li>
+                        			</ul>
+                <div class="nav_text bottom">
+                    <p>Copyright &#169; 2015, CS50.<br/>  Designed by Kevin Schmid<br/> and Daniel Citron.</p>
+                    <p class="sponsor_thanks"><a class="sponsors-link"><span>With thanks to our</span> sponsors</a>.</p>
+                </div>
+    		</div>
+        </div>
+        <div id="content">
+            
+<script id="formsTmpl" type="text/template">
+    <% _.each(surveys, function (survey) { %>
+        <ul>
+            <% for (question in survey) {  %>
+                <li><h3><%= question %></h3><p><%= survey[question] %></p></li>
+            <% } %>
+        </ul>
+        <br/><br/>
+    <% }); %>
+</script>
+
+<script id="panelTmpl" type="text/template">
+    <ul id="panel-menu">
+        <% _.each(link, function (item) { %>
+            <li><a><%= item %></a></li>
+        <% }); %>
+    </ul>
+</script>
+<script id="asciidocTmpl" type="text/template">
+    <div class="asciidoc">
+        <h1><%= metadata.title %></h1>
+        <div><%= content %></div>
+    </div>
+</script>
+<script id="sectionNoTmpl" type="text/template">
+    <p style="padding-top: 35px; padding-bottom: 35px; background-color: white; color: #83CEE5">Oops! We couldn't seem to find your section in our records.  Can you fill out the form at <a style="color: #83CEE5; font-weight: bold" href="https://cs50.net/resection">cs50.net/resection</a> to request a section?</p>
+</script>
+<script id="sectionStudentTmpl" type="text/template">
+    <p style="padding-top: 35px; padding-bottom: 35px; background-color: white; color: #83CEE5">
+    If you'd like to resection, please fill out the form at <a style="color: #83CEE5; font-weight: bold" href="https://cs50.net/resection" target="_blank">cs50.net/resection</a>.</p>
+    <h3>
+        <% var sectionNames = {
+                "Less": "Less Comfortable",
+                "Between": "Somewhere In Between",
+                "More": "More Comfortable"
+            };
+        %>
+        <% if (sectionNames[comfort]) { %>
+            <%= sectionNames[comfort] %>
+        <% } else { %>
+            <%= comfort %>
+        <% } %>
+        <% if (day) { %>
+            <br/><%= day %>, <%= new Date(Date.parse(start)).toString("h:mm") %>&#8211;<%= new Date(Date.parse(start)).add({minutes: 90}).toString("h:mm tt") %>
+        <% } %>
+        <br/><%= room %>
+    </h3>
+    <hr/>
+    <h3><%= first %> <%= last %>, teaching fellow<br/><%= email %></h3>
+</script>
+<script id="sectionTmpl" type="text/template">
+    <% _.each(sections, function(section) { %>
+        <h3>
+        <% var sectionNames = {
+                "Less": "Less Comfortable",
+                "Between": "Somewhere In Between",
+                "More": "More Comfortable"
+            };
+        %>
+        <% if (sectionNames[section.comfort]) { %>
+            <%= sectionNames[section.comfort] %>
+        <% } else { %>
+            <%= section.comfort %>
+        <% } %>
+        <% if (section.day) { %>
+            <br/><%= section.day %>, <%= new Date(Date.parse(section.time)).toString("h:mm") %>-<%= new Date(Date.parse(section.time)).add({minutes: 90}).toString("h:mm tt") %>
+        <% } %>
+        <br/><%= section.room %></h3>
+        <hr/>
+        <ul style="text-align: left">
+            <% _.each(section.students, function (student) { %>
+                <li><b><%= student.last %>, <%= student.first %></b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<a href="mailto:<%= student.email %>"><%= student.email %></a></li>
+            <% }); %>
+        </ul>
+        <a href="
+            <%
+               var mailto = "mailto:";
+                var emails = [];
+                _.each(section.students, function (student) {
+                    emails.push(student.email);
+                });
+                mailto += emails.join(",");
+            %>
+            <%= mailto %>
+        ">Email All</a>
+    <div style="height: 50px">
+    </div>
+    <% }); %>
+</script>
+<script id="gradebookEntryTmpl" type="text/template">
+    <div id="gradePanel">
+        <select id="viewMenu"></select>
+        <div data-view="students" id="entrySwitch"><span>By Assignment</span></div>
+    </div>
+    <div id="assignments"></div>
+</script>
+<script id="gradebookStudentTmpl" type="text/template">
+    <div id="assignments"></div>
+</script>
+<script id="assignmentDropdown" type="text/template">
+    <% _.each(assignments, function (assignment) { %>
+        <% if (assignment.id == selected) { %>
+            <option value="<%= assignment.id %>" selected><%= assignment.name %></option>
+        <% } else { %>
+            <option value="<%= assignment.id %>"><%= assignment.name %></option>
+        <% } %>
+    <% }); %>
+</script>
+<script id="studentDropdown" type="text/template">
+    <% _.each(students, function(category) { %>
+        <% _.each(category, function(student) { %>
+            <% if (selected == student.id) { %>
+                <option value="<%= student.id %>" selected ><%= student.fullname %></option>
+            <% } else { %>
+                <option value="<%= student.id %>"><%= student.fullname %></option>
+            <% } %>
+        <% }); %>
+    <% }); %>
+</script>
+<script id="assignmentsTemplate" type="text/template">
+    <% _.each(assignments, function(assignment) { %>
+		<div class="assignment" data-aid="<%= assignment.id %>">
+    	    <h3><%= assignment.name %></h3>
+            <% if (student && assignment.deadline) { %>
+                <div class="deadline">Due <%= CS50.Gradebook.formatDate(assignment.deadline) %><% if (assignment.coupon) { %><span class="redeem-text">, <span class="redeem-link"><b>redeem code</b></span></span><% } %></div>
+	    		<div class="deadline deadline-extended">Extended to <span class="deadline-date"></span></div>
+	        <% } %>
+	    	<%= formForAssignment({components: assignment.axes, idPrefix: undefined, formForAssignment: formForAssignment, student: student}) %>
+		</div>
+	<% }); %>
+</script>
+<script id="studentsTemplate" type="text/template">
+    <% _.each(students, function(category) { %>
+        <% _.each(category, function(student) { %>
+		    <div class="assignment" data-sid="<%= student.id %>">
+    	        <h3><%= student.fullname %></h3>
+	    		<%= formForAssignment({components: assignment.axes, idPrefix: undefined, formForAssignment: formForAssignment, student: student}) %>
+    		</div>
+        <% }); %>
+    <% }); %>
+</script>
+<script id="gradeBoxTemplate" type="text/template">
+</script>
+<script id="formForAssignmentTemplate" type="text/template">
+    <% if (typeof student === 'undefined') { student = false; } %>
+	<ul>
+		<% _.each(components, function(component) {
+
+            switch (component.type) {
+                case "axis":
+    		    var fullPrefix = idPrefix ? (idPrefix + "@" + component.id) : component.id;
+
+        %>
+        	<li class="standalone">
+                <input type="text" class="score" data-axis-id="<%= fullPrefix %>"
+	            <% if (component.cutoffs) { %>
+	                data-cutoffs="<%= JSON.stringify(component.cutoffs) %>"
+                    <% } %>
+                    <% if (component.max) { %>
+	                    data-max="<%= component.max %>"
+	                <% } else if (component.cutoffs) { %>
+                        data-max="<%= component.cutoffs.length %>"
+                    <% } %>
+	        	            />
+                    <% if (component.axes.length != 0) { %>
+                        <div class="title children">
+                            <span class="axis-name"><%= component.label %></span>
+                            <% if (!student) { /* XXX ROB not the perfect fix, but whatever. The handler should be disabled, too */ %>
+                                <div class="hierarchy-arrow"></div>
+                            <% } %>
+                        </div>
+            		    <%= formForAssignment({components: component.axes, idPrefix: fullPrefix, formForAssignment: formForAssignment, student: student}) %>
+                    <% } else { %>
+                        <div class="title">
+                            <span class="axis-name"><%= component.label %></span>
+                        </div>
+                    <% } %>
+            </li>
+        <%
+                    break;
+                case "group":
+        %>
+                <li class="group">
+                <% if (component.axes.length != 0) { %>
+                    <div class="title children">
+                        <span class="axis-name"><%= component.name %></span>
+                        <div class="hierarchy-arrow"></div>
+                    </div>
+            	    <%= formForAssignment({components: component.axes, idPrefix: idPrefix, formForAssignment: formForAssignment, student: student}) %>
+                <% } else { %>
+                    <div class="title">
+                        <span class="axis-name"><%= component.name %></span>
+                    </div>
+                <% } %>
+                </li>
+        <%
+            }
+		%>
+		<% }); %>
+	</ul>
+</script>
+<script type="text/template" id="ohCalendarTmpl">
+    <iframe src="https://www.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=1&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=f1vd9k17apssc12tesn9vhoorg%40group.calendar.google.com&amp;color=%23B1365F&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="400" frameborder="0" scrolling="no"></iframe>
+</script>
+<script type="text/template" id="couponTmpl">
+    <div id="coupon-error">Oops! We didn't accept that coupon code.</div>
+    <p><input type="text" id="coupon-code" placeholder="Code..."/></p>
+    <p><button id="coupon-redeem">Redeem</button></p>
+</script>
+<script type="text/template" id="staffListTmpl">
+    <% _.each(staff, function(member) { %>
+        <div class="staff-member">
+            <div class="staff-member-img-container"><img class="staff-member-img" src="/img/staff/<%= member.img %>"/></div>
+            <p class="staff-member-name">
+                <% if (member.email) { %>
+                    <a href="mailto:<%= member.email %>">
+                <% } %>
+                <%= (member.nickname != "" ? member.nickname : member.first) + " " + member.last %> <%= member.year == "" ? "" : "'" + member.year.substring(2)%>
+                <% if (member.email) { %>
+                    </a>
+                <% } %>
+            </p>
+            <p><%= member.role %></p>
+            <p><%= member.concentration + (member.secondary != "None" && member.secondary != "" ? ", " + member.secondary : "")%></p>
+            <p><%= member.house != "Other (non-Harvard)" ? member.house : "<br/>" %></p>
+        </div>
+    <% }); %>
+</script>
+<script type="text/template" id="staffTmpl">
+    <div id="staff-subtitle">To contact the course's heads, email <a href="mailto:heads@cs50.harvard.edu">heads@cs50.harvard.edu</a>.</div>
+    <% var staffList = $("#staffListTmpl").html(); %>
+    <div style="padding-bottom: 50px"><%= _.template(staffList, {staff: staff.heads}) %></div>
+    <hr/>
+    <div><%= _.template(staffList, {staff: staff.staff}) %></div>
+    <div class="staff-padding"></div>
+</script>
+<script type="text/template" id="linkTmpl">
+    <div class="link-container">
+        <a href="<%= href %>"><%= text %></a>
+        <div class="link-icon"></div>
+    </div>
+</script>
+<script type="text/template" id="columnTmpl">
+    <div class="column" data-z-index="<%= zindex%>" style="background-color: <%= color %>">
+        <div class="arrow" style="border-color: transparent <%= arrow %> transparent transparent"></div>
+        <div class="content"></div>
+    </div>
+</script>
+<script type="text/template" id="qCommentsTmpl">
+    <ul>
+        <% _.each(comments, function(comment) { %>
+            <li><%= comment %></li>
+        <% }); %>
+    </ul>
+</script>
+<script type="text/template" id="qTable">
+    <table id="q-table">
+        <tr id="table-header">
+            <th>Category</th>
+	        <th>Mean</th>
+	        <th>
+	            Benchmark
+	            <p class="nat-sciences">Natural Sciences</p>
+	        </th>
+            <th>1</th>
+	        <th>2</th>
+	        <th>3</th>
+	        <th>4</th>
+	        <th>5</th>
+            <th>Total</th>
+        </tr>
+        <% _.each(table, function(row) { %>
+            <tr>
+                <td><%= row.name %></td>
+                <td><%= row.mean %></td>
+                <td><%= row.benchmark %></td>
+                <% _.each(row.distribution, function(quantity) { %>
+                    <td><%= quantity %></td>
+                <% }); %>
+                <td><%= row.total %></td>
+            </tr>
+        <% }); %>
+    </table>
+</script>
+<script type="text/template" id="qTmpl">
+    <h2 class="column-header">Q Evaluations</h2>
+    <div id="q-content">
+        <select id="year-dropdown">
+            <% _.each(_.range(2007, 2014).reverse(), function(curYear) { %>
+                    <option value="<%= curYear %>"
+                        <% if (curYear == year) { %>
+                            selected
+                        <% } %>
+                    >
+                        <%= curYear %>
+                    </option>
+                <% }); %>
+        </select>
+        <select id="comments-dropdown">
+            <option value="strengths">
+                What were the strengths of this course?
+            </option>
+            <option value="future">
+                What would you like to tell future students about this class?
+            </option>
+            <option value="learn">
+                What did you learn? How did this course change you?
+            </option>
+            <option value="teaching">
+                Please comment on David's teaching.
+            </option>
+        </select>
+        <div id="q-icons">
+            <div class="q-container">
+                <img class="q-icon" data-view="graph" src="/img/icons/q-graphs-icon.png" alt="q-graph"/>
+            </div>
+            <div class="q-container">
+                <img class="q-icon" data-view="comments" src="/img/icons/q-comments-icon.png" alt="q-comments"/>
+            </div>
+        </div>
+        <div id="q-graph">
+            <% _.each(_.range(1, 6), function(i) { %>
+	            <div class="bar-container
+	                <% if (i != 1) { %>
+                        notfirst
+	                <% } %>
+	            ">
+		            <div class="bar-title"><%= i %></div>
+	                <div class="q-bar"></div>
+                    <div class="bar-data"></div>
+                </div>
+            <% }); %>
+        </div>
+	    <div id="q-graph-tabs">
+            <div class="tab" data-graph="overall">Overall</div>
+            <div class="tab" data-graph="workload">Workload</div>
+	        <div class="tab" id="difficulty-tab" data-graph="difficulty">Difficulty</div>
+            <div class="tab-selected"></div>
+        </div>
+        <ul id="q-comments">
+        </ul>
+	    <div id="q-chart"></div>
+    </div>
+</script>
+<script type="text/template" id="listingTmpl">
+    <h2 class="column-header"><%= typeof header == "string" ? header : header.title %></h2>
+    <% if (header.description) { %>
+        <p style="padding-left: 10px; padding-right: 10px"><%= header.description %></p>
+	<% } %>
+	<div class="list">
+	    <ul>
+    	    <% _.each(listings, function(item) { %>
+        	    <li class="overflow" data-link-id="<%= item.id %>"
+            	    <% if (item.link) { %>
+                	    data-href="<%= item.link %>"
+                	<% } %>
+					<% if (item.document) { %>
+						data-doc-id="<%= item.document %>"
+					<% } %>
+            	>
+                	<% if (item.link) { %>
+                        <%= _.template($("#linkTmpl").html(), {href: item.link, text: item.text}) %>
+                	<% } else { %>
+                    	<%= item.text %>
+                	<% } %>
+            	</li>
+	        <% }); %>
+ 	   </ul>
+	</div>
+</script>
+<script type="text/template" id="documentTmpl">
+    <div class="document">
+        <h2 class="column-header"><%= title %></h2>
+        <div class="content"><%= content %></div>
+    </div>
+</script>
+<div id="faqs"></div>
+<div id="menu-overlay">
+</div>
+<div id="blocks">
+    <div class="block-row">
+        <!--
+        <div class="block block-regular" style="background: url(/img/blocks/rbp.jpg) no-repeat center; background-size: contain; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+            <div class="block block-yellow block-text">
+                <div class="block-inner">
+                    <a href="http://cdn.cs50.net/2013/fall/lectures/0/w/faqs.pdf" target="_blank">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <h2 style="font-size: 48pt">SAT/UNS</h2>
+                                    <p style="font-size: 16pt">Venture outside of your comfort zone.<br/>Comfortably.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                </div>
+            </div>
+        </div>
+        -->
+            <!--
+            <div class="block block-regular" style="background: url(/img/blocks/fair_group.jpg) no-repeat center; background-size: cover; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+            <div class="block block-black block-text">
+                <div class="block-inner">
+                </div>
+            </div>
+            <div class="fade block block-regular" style="background: url(/img/ballmer.jpg) no-repeat center; background-size: cover; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+            <div class="block block-black block-text">
+                <div class="block-inner">
+                    <iframe width="100%" height="100%" src="//www.youtube.com/embed/El2mr5aS8y0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            -->
+            <div class="fade block block-regular" style="background: url(/img/yale.png) no-repeat center; background-size: cover; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+
+            <div class="block block-yellow block-text" style="background-color: #6B232F">
+                <div class="block-inner">
+                    <a href="/apply">
+                        <table style="height: 100%; width: 100%;">
+                            <tr>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <h2 style="font-size: 24pt">Join the Staff</h2>
+                                    <p>now recruiting for CAs, TFs, and more<br/><span style="font-size: smaller">in Cambridge and New Haven</span><br/><br/><u>cs50.harvard.edu/apply</u></p>
+                                </td>
+                            </tr>
+                        </table>
+                    </a>
+                </div>
+            </div>
+
+            <div class="fade block block-regular" style="background: url(/img/fair.jpg) no-repeat center; background-color: #000; background-size: contain; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+            <!--
+            <div class="block block-black block-text">
+                <div class="block-inner">
+                    <iframe width="100%" height="100%" src="//www.youtube.com/embed/3kOeRpzzQPk" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            -->
+
+            <!--
+            <div class="block block-blue block-text" id="simultaneousBlock">
+                <div class="block-inner">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <h2 style="font-size: 48pt">FAQ</h2>
+                                    <p style="font-size: 20pt">Simultaneous Enrollment</p>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            <div class="fade block block-regular" style="background: url(/img/why1.png) no-repeat center; background-color: #000; background-size: contain; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+            <div class="block block-blue block-text" style="background-color: #CC1332">
+                <div class="block-inner">
+                        <table style="height: 100%; width: 100%;">
+                            <tr>
+                                <td style="text-align: center; vertical-align: middle;">
+                                    <h2 style="font-size: 24pt"></h2>
+                                    <p></p>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+            -->
+    </div>
+    <div class="block-row">
+        <div class="block block-purple block-text" style="background-color: #C41230">
+            <div class="block-inner">
+                <div class="block-inner">
+                    <a href="/ama">
+                    <table style="height: 100%; width: 100%;">
+                        <tr>
+                            <!--
+                            <td style="text-align: center; vertical-align: middle;">
+                                                                <h2 style="font-size: 24pt"></h2>
+                                <p></p>
+                            </td>
+                            -->
+                            <td style="text-align: center; vertical-align: middle;">
+                                <h2 style="font-size: 24pt">CS50 AMA</h2>
+                                <p><u>reddit.com/IAmA</u></p>
+                            </td>
+                        </tr>
+                    </table>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+            <div class="block block-black block-text">
+                <div class="block-inner">
+                                <!-- Movin' Right Along -->
+                    <iframe width="100%" height="100%" src="//www.youtube.com/embed/3kOeRpzzQPk" frameborder="0" allowfullscreen></iframe>
+                    <!-- Mystery
+                    <iframe width="100%" height="100%" src="https://live.cs50.net/" frameborder="0" allowfullscreen></iframe>
+                    -->
+                    <!-- Holidays 2014
+                    <iframe width="100%" height="100%" src="//www.youtube.com/embed/_qTC4a-2hJs" frameborder="0" allowfullscreen></iframe>
+                    -->
+                </div>
+            </div>
+
+                <div class="block block-text block-lightpurple" style="background-color: #0E4C92">
+                                <div class="block-inner">
+                    <table style="height: 100%; width: 100%;">
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <h2 style="font-size: 24pt">CS50 at Yale</h2>
+                                <p>starts Fall 2015</p>
+                            </td>
+                        </tr>
+                   </table>
+                </div>
+        </div>
+    </div>
+    <div class="block-row">
+
+        <!--
+        <div class="block block-green block-text" style="background-color: #146ACC">
+            <div class="block-inner">
+                    <table style="height: 100%; width: 100%;">
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <h2 style="font-size: 24pt"></h2>
+                                <p></p>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        -->
+
+        <div class="block block-black block-text">
+            <div class="block-inner">
+                <!-- Sam's Tour -->
+                <iframe width="100%" height="100%" src="//www.youtube.com/embed/vQP17-qcQV4" frameborder="0" allowfullscreen></iframe>
+                <!-- Movin' Right Along
+                <iframe width="100%" height="100%" src="//www.youtube.com/embed/3kOeRpzzQPk" frameborder="0" allowfullscreen></iframe>
+		-->           
+            </div>
+        </div>
+
+        <div class="block block-salmon block-text" style="background-color: #24456B">
+                <div class="block-inner">
+                    <table style="height: 100%; width: 100%;">
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <h2 style="font-size: 24pt"></h2>
+                                <p></p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        </div>
+
+        <!--
+        <div class="fade block block-regular" style="background: url(/img/why2.png) no-repeat center; background-color: #000; background-size: contain; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+        -->
+        <!--
+        <div class="block block-green block-text" style="background-color: #1885FF">
+            <div class="block-inner">
+                    <table style="height: 100%; width: 100%;">
+                        <tr>
+                            <td style="text-align: center; vertical-align: middle;">
+                                <h2 style="font-size: 24pt"></h2>
+                                <p></p>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+        </div>
+        -->
+
+        <div class="block block-black block-text">
+            <div class="block-inner">
+                <iframe width="100%" height="100%" src="//www.youtube.com/embed/v5OC-x_anA8" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!--
+        <div class="block block-regular" style="background: url(/img/blocks/hackathon_pizza.jpg) no-repeat center; background-size: cover; -ms-behavior: url(/css/backgroundsize.min.htc);"></div>
+        <div class="block block-text hunt fade" style="background-color: black; cursor: auto">
+            <div class="block-inner">
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+        </div>
+        <div id="tooltip">
+        </div>
+    </body>
+</html>
